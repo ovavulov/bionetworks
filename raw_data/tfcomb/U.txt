@@ -1,0 +1,253 @@
+Genbank Identifier	Gene_Yeast_GI
+E1
+6325438            AOS1_Scer_6325438
+6321965            ATG7_Scer_6321965
+6322639            UBA1_Scer_6322639
+6320598            UBA2_Scer_6320598
+6325323            UBA3_Scer_6325323
+6321903            UBA4_Scer_6321903
+6321790            YHR003C_Scer_6321790
+6322825            YKL027W_Scer_6322825
+
+UBC domain- E2
+6320259            CDC34_Scer_6320259
+6321351            MMS2_Scer_6321351
+6321572            PEX4_Scer_6321572
+6323664            QRI8_Scer_6323664
+6321380            RAD6_Scer_6321380
+6319648            SEC66_Scer_6319648
+10383776           STP22_Scer_10383776
+6324915            UBC11_Scer_6324915
+6323337            UBC12_Scer_6323337
+6320297            UBC13_Scer_6320297
+6320382            UBC1_Scer_6320382
+6319556            UBC4_Scer_6319556
+6320264            UBC5_Scer_6320264
+6320947            UBC6_Scer_6320947
+6579192            UBC8_Scer_6579192
+6320139            UBC9_Scer_6320139
+
+RING finger - E3
+6320196            APC11_Scer_6320196
+6320129            BRE1_Scer_6320129
+6323426            CST9_Scer_6323426
+6323355            CWC24_Scer_6323355
+6321907            DMA1_Scer_6321907
+6324213            DMA2_Scer_6324213
+6322304            FAR1_Scer_6322304
+6320191            HEX3_Scer_6320191
+6324561            HRD1_Scer_6324561
+6324438            HRT1_Scer_6324438
+6323459            MAG2_Scer_6323459
+6320912            MOT2_Scer_6320912
+6324730            NFI1_Scer_6324730
+6323177            PEP3_Scer_6323177
+6323887            PEP5_Scer_6323887
+6320471            PEX10_Scer_6320471
+6323668            PEX12_Scer_6323668
+6324518            PSH1_Scer_6324518
+6319590            RAD16_Scer_6319590
+6319911            RAD18_Scer_6319911
+6323060            RAD5_Scer_6323060
+6324765            RIS1_Scer_6324765
+6320347            SAN1_Scer_6320347
+6320617            SIZ1_Scer_6320617
+6320962            SLX8_Scer_6320962
+6320308            STE5_Scer_6320308
+6320668            TFB3_Scer_6320668
+6322817            TUL1_Scer_6322817
+6321623            UBR1_Scer_6321623
+6323052            UBR2_Scer_6323052
+6319316            VPS8_Scer_6319316
+6319536            YBR062C_Scer_6319536
+6320333            YDR128W_Scer_6320333
+6320472            YDR266C_Scer_6320472
+6321777            YHL010C_Scer_6321777
+6322869            YKR017C_Scer_6322869
+6323276            YLR247C_Scer_6323276
+6323904            YMR247C_Scer_6323904
+6324434            YOL138C_Scer_6324434
+6325350            YPR093C_Scer_6325350
+
+U-box - E3
+6320011            UFD2_Scer_6320011
+6322791            MPE1_Scer_6322791
+6322159            SSM4_Scer_6322159
+6320817            MMS21_Scer_6320817
+6322992            PRP19_Scer_6322992
+6323572            ITT1_Scer_6323572
+
+HECT like - E3
+6320972            RSP5_Scer_6320972
+6320665            TOM1_Scer_6320665
+6322497            HUL4_Scer_6322497
+6321297            HUL5_Scer_6321297
+6322842            UFD4_Scer_6322842
+
+Ubiquitin/Smt3
+6325306           ATG11_Scer_6325306
+6323932           DSK2_Scer_6323932
+6324360           HUB1_Scer_6324360
+6320843           PAC2_Scer_6320843
+6320798           RAD23_Scer_6320798
+6322043           RPL40A_Scer_6322043
+6322947           RPL40B_Scer_6322947
+6323196           RPS31_Scer_6323196
+9755329           RUB1_Scer_9755329
+6320718           SMT3_Scer_6320718
+6322989           UBI4_Scer_6322989
+6323612           USA1_Scer_6323612
+6324461           YOL111C_Scer_6324461
+
+UBX
+6323628           SEL1_Scer_6323628
+6319413           SHP1_Scer_6319413
+6320112           UBX3_Scer_6320112
+6323712           UBX4_Scer_6323712
+6320537           UBX5_Scer_6320537
+6322413           UBX6_Scer_6322413
+6319750           UBX7_Scer_6319750
+
+UBA
+6320991           DDI1_Scer_6320991
+6323932           DSK2_Scer_6323932
+6321257           GTS1_Scer_6321257
+6320798           RAD23_Scer_6320798
+6324712           RUP1_Scer_6324712
+6319532           UBP14_Scer_6319532
+
+CUE
+6322760           CUE2_Scer_6322760
+6324615           CUE5_Scer_6324615
+6320479           DON1_Scer_6320479
+6323541           VPS9_Scer_6323541
+
+UBHYD/ USP
+6320274           DOA4_Scer_6320274
+6321344           PAN2_Scer_6321344
+14318527          SAD1_Scer_14318527
+6324143           UBP10_Scer_6324143
+6322951           UBP11_Scer_6322951
+6322264           UBP12_Scer_6322264
+6319404           UBP13_Scer_6319404
+6319532           UBP14_Scer_6319532
+6323962           UBP15_Scer_6323962
+6325184           UBP16_Scer_6325184
+6320081           UBP1_Scer_6320081
+6324698           UBP2_Scer_6324698
+6320999           UBP3_Scer_6320999
+6320992           UBP5_Scer_6320992
+14318532          UBP6_Scer_14318532
+6322035           UBP7_Scer_6322035
+6323879           UBP8_Scer_6323879
+6320945           UBP9_Scer_6320945
+
+OTU
+6321774           YHL013C_Scer_6321774
+14318475          YOD1_Scer_14318475
+
+Smt4
+6325237           ULP1_Scer_6325237
+6322158           ULP2_Scer_6322158
+
+Little finger (C2H2-U)
+14318475
+
+UIM
+6324332           VPS27_Scer_6324332
+6320039           ENT1_Scer_6320039
+6321994           RPN10_Scer_6321994
+6320672           SPP41_Scer_6320672
+6323235           ENT2_Scer_6323235
+6321785           HSE1_Scer_6321785
+6323551           UFO1_Scer_6323551
+
+PUL
+6322636           DOA1_Scer_6322636
+
+Skp1
+6320535           SKP1_Scer_6320535
+
+Cullin
+6323156           APC2_Scer_6323156
+6320070           CDC53_Scer_6320070
+6321440           CUL3_Scer_6321440
+6322414           RTT101_Scer_6322414
+6319736           YBR259W_Scer_6319736
+
+F-box
+6322143           MET30_Scer_6322143   
+6323551           UFO1_Scer_6323551    
+14318513          CDC4_Scer_14318513   
+6322549           GRR1_Scer_6322549    
+6324018           SKP2_Scer_6324018
+6322257           RCY1_Scer_6322257    
+6320336           YDR131C_Scer_6320336 
+6323400           MDM30_Scer_6323400   
+6322312           YJL149W_Scer_6322312 
+6319680           COS111_Scer_6319680  
+6324654           DIA2_Scer_6324654    
+6320425           YDR219C_Scer_6320425 
+6323126           HRT3_Scer_6323126    
+6324099           ELA1_Scer_6324099
+6320512           YDR306C_Scer_6320512
+6323253           YLR224W_Scer_6323253
+6323914           YMR258C_Scer_6323914
+6323741           CTF13_Scer_6323741
+6319634           AMN1_Scer_6319634
+6319757           YBR280C_Scer_6319757
+6323384           YLR352W_Scer_6323384
+
+WLM
+6321926           WSS1_Scer_6321926
+
+PUG
+6321870           IRE1_Scer_6321870
+
+Transglutaminase/ PNGase
+6325161           PNG1_Scer_6325161
+6320086           CYK3_Scer_6320086
+6321010           RAD4_Scer_6321010
+6320520           YDR314C_Scer_6320520
+
+----Proteasome subunits-------
+NTN hydrolase- proteasome subunit
+6319430           PRE7_Scer_6319430
+6320849           PRE1_Scer_6320849
+6325360           PRE2_Scer_6325360
+6322459           PRE3_Scer_6322459
+14318575          PRE4_Scer_14318575
+6323974           PRE5_Scer_6323974
+6324535           PRE6_Scer_6324535
+6321574           PRE9_Scer_6321574
+6323547           PRE8_Scer_6323547
+6324938           PRE10_Scer_6324938
+6324731           PUP1_Scer_6324731
+6321692           PUP2_Scer_6321692
+6320941           PUP3_Scer_6320941
+6321427           SCL1_Scer_6321427
+
+JAB/MPN
+14318526          RPN11_Scer_14318526
+6319985           RRI1_Scer_6319985
+6324835           RPN8_Scer_6324835
+
+26S proteasome regulatory subunit 5a 
+6321994
+PINT/ PCI
+6320859           RPN3_Scer_6320859
+6320106           RPN6_Scer_6320106
+6320635           RPN9_Scer_6320635
+6325365           RPN7_Scer_6325365
+6323969           NIP1_Scer_6323969
+6320054           RPN5_Scer_6320054
+6319553           RPG1_Scer_6319553
+13432314          PCI8_Scer_13432314
+
+Proteasome subunits like AAA ATPase
+6322704           RPT1_Scer_6322704
+6324833           RPT4_Scer_6324833
+6321390           RPT6_Scer_6321390
+6324691           RPT5_Scer_6324691
+6320602           RPT3_Scer_6320602
+6320197           RPT2_Scer_6320197

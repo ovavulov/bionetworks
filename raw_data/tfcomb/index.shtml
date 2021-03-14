@@ -1,0 +1,58 @@
+<html>
+<title>Principles of combinatorial regulation in the transcriptional regulatory network of yeast</title>
+
+<!-- Author: Madan Babu Mohan, 15th Jan 2005>
+
+<body bgcolor=white>
+
+<br>
+<center><font face=arial size=4><b><font face="helvetica">Principles of combinatorial regulation in the transcriptional regulatory network of yeast</b></font><br>
+<br><font face=times size=3><a href="mailto:sbalaji@ncbi.nlm.nih.gov">S. Balaji<sup>1,*,+</sup></a>, <a href="http://www.mrc-lmb.cam.ac.uk/genomes/madanm">M. Madan Babu<sup>1,*,+</sup></b></a>, <font face=times size=3>Lakshminarayan M Iyer<sup>1</sup></b></a>, <font face=times size=3>Nicholas M Luscombe<sup>2</sup></b></a>, <font face=times size=3>L. Aravind<sup>1</sup></b></a></font>
+
+</b></br><br>
+<font face=arial size=2>
+
+</font>
+<sup>*</sup><font face=times size=2> <i>Joint first authors</i><br>
+<sup>+</sup><font face=times size=2> <i>Address for correspondence: MMB (<a href="mailto:madanm@ncbi.nlm.nih.gov">madanm@ncbi.nlm.nih.gov</a>) or SB (<a href="mailto:sbalaji@mail.nih.gov">sbalaji@mail.nih.gov</a>)</i><br><br>
+<sup>1</sup>
+<font face=times size=2> <i>National Center for Biotechnology Information, National Library of Medicine, National Institutes of Health, Bethesda, MD 20894, USA<br>
+Phone: 1-301-402-9667  ::  Fax: 1-301-480-4637</i></font><br>
+<sup>2</sup>
+<font face=times size=2> <i>European Bioinformatics Institute, Wellcome Trust Genome Campus, Hinxton, Cambridge, CB10 1SD, UK <br>
+<br><br>
+</center>
+<br>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr><td width="5%"></td>
+<td width="90%"><hr>
+<br>
+<font face=times size=2>
+Studies on various model systems have shown that a relatively small number of transcription factors can set up strikingly complex spatial and temporal patterns of gene expression. This is mainly achieved by means of combinatorial or differential gene regulation, i.e. regulation of a gene by two or more transcription factors simultaneously or under different conditions. While a number of specific molecular details of the mechanisms of combinatorial regulation have emerged, our understanding of the general principles of combinatorial regulation on a genomic scale is still limited. In this work, we approach this problem by using the largest assembled transcriptional regulatory network for yeast. A specific network transformation procedure was used to obtain the co-regulatory network describing the set of all significant associations among transcription factors in regulating common target genes. Analysis of the global properties of the co-regulatory network suggested the presence of two classes of regulatory hubs: 
+
+(i) those that make many co-regulatory associations, thus serving as integrators of disparate cellular processes and (ii) those that make few co-regulatory associations, and thereby specifically regulating one or a few major cellular processes. Transcription factor pairs with highly significant co-regulatory associations typically correspond to evolutionarily related transcription factors retaining a common pool of ancestral target genes or physically interacting proteins. Investigation of the local structure of the co-regulatory network revealed a significantly higher than expected modular organization, which might have emerged as a result of selection by functional constraints. These constraints probably emerge from the need for extensive modular backup and the requirement to integrate transcriptional inputs of multiple distinct functional systems. 
+
+We then explored the transcriptional control of three major regulatory systems (ubiquitin-signaling, protein kinase and transcriptional regulation systems) to understand specific aspects of their upstream control. As a result, we observed that ubiquitin E3 ligases are primarily regulated by unique transcription factors, whereas E1 and E2 enzymes share common transcription factors to much greater extent. This suggested that the deployment of E3s unique to specific functional contexts may be significantly mediated at the transcriptional level.  Likewise, we were able to uncover evidence for much higher upstream transcription control of transcription factors themselves, in comparison to components of other regulatory systems. We believe that the results presented here might provide a framework for testing the role of co-regulatory associations in eukaryotic transcriptional control.
+
+<br><br>
+<hr><br><ul>
+<li><font size=3><b>Supplementary material S1:</b></font> <a href="coreg-net.txt">Co-regulation network</a>: List of pairs of transcription factors with co-regulation coefficient. The file also contains the names of shared target genes for each pair. This file contains 5622 pairs. Co-regulation network, i.e. a subset of TF pairs (3459 pairs) with coregulation co-efficient value greater 1, is available <a href="cnet.txt">here</a>.<br>
+<li><font size=3><b>Supplementaty material S2:</b></font> <a href="134-func.txt">134-modules</a>: List of 134 modules in the co-regulation network obtained using an inclusion threshold of 0.5. The file contains the size of the module and the names of transcription factors with the processes in which it is primarily associated with.<br>
+<li><font size=3><b>Supplementary material S3:</b></font> <a href="16-func.txt">16-modules</a>: List of 16 non-overlapping modules in the co-ergulation network. The file contains the size of the module and the names of transcription factors with the processes in which it is primarily associated with.<br>
+<li><font size=3><b>Supplementary material S4:</b></font> <a href="ynum-func.txt">y-modules</a>: List of modules which involves uncharacterized transcription factors. The associateed module provides a novel form of contextual information which can be used to infer the function of the uncharacterized factors. The file contains the size of the module and the names of transcription factors with the processes in which it is primarily associated with.<br>
+<li><font size=3><b>Supplementary material S5:</b></font> List of <a href="U.txt">ubiquitin</a>, <a href="K.txt">kinase</a> and <a href="T.txt">transcription factor</a> genes used in the analysis. Transcriptional networks for <a href="tnet-U.txt">ubiquitin</a>, <a href="tnet-K.txt">kinase</a> and <a href="tnet-T.txt">transcription factor</a> genes.
+<li><font size=3><b>Supplementary material S6:</b></font> <a href="tnet.txt">Transcriptional network</a> used in this analysis (12,873 interactions).
+</ul>
+<br>
+<hr>
+
+<br>
+</td>
+<td width="5%"></td>
+</tr>
+</table>
+<center><i><font face=times size=2>This page was last updated on: 15th Jan 2006</i></center><br></font>
+<center><!--#include virtual="/genomes/cgi/tfcomb/count.cgi?$a=1"--></center><br><font face=times size=2><i>Since 15th Jan 2006</font></i>
+</body>
+</html>
+

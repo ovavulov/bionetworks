@@ -1,3 +1,7 @@
+/networks/*/splits/*
+/networks/yeast/interaction_matrix.pkl
+/networks/yeast/interaction_matrix_sl.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
