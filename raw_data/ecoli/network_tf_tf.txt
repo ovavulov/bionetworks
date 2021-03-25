@@ -1,0 +1,522 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Santos-Zavaleta A et al. (2019). RegulonDB v 10.5: tackling challenges to unify classic and high throughput knowledge of gene regulation in E. coli K-12.,
+#      Nucleic Acids Res. 2019 Jan 8;47(D1):D212-D220. doi: 10.1093/nar/gky1077.
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 10.8 Date: 10/12/2020
+# ___________________________________________________________________________
+#
+# Columns:
+#  (1) Transcription Factor (TF) name
+#  (2) TF  regulated by TF
+#  (3) Regulatory effect of the TF on the regulated gene (+ activator, - repressor, +- dual, ? unknown)
+#  (4) Evidence that supports the existence of the regulatory interaction
+#  (5) Evidence Type [Weak, Strong, Confirmed] For details see: http://regulondb.ccg.unam.mx/evidenceclassification
+#
+AccB	accB	-	[CV(GEA), GEA, IMP]	Strong	
+AcrR	acrR	-	[AIBSCS, APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+AcrR	flhC	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+AcrR	flhD	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+AcrR	marA	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AcrR	marR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AcrR	soxR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AcrR	soxS	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Ada	ada	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Ada	ada	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Ada	aidB	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AdiY	gadX	+	[BPP]	Strong	
+AgaR	agaR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AidB	aidB	-	[BPP, GEA]	Strong	
+AlaS	alaS	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+AllR	allS	-	[BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+AlsR	alsR	-	[CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+AraC	araC	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+AraC	araC	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+ArcA	appY	+	[AIBSCS]	Weak	
+ArcA	betI	-	[BCE, CV(GEA), GEA]	Strong	
+ArcA	dpiA	+	[AIBSCS]	Weak	
+ArcA	fnr	-	[GEA]	Weak	
+ArcA	gadE	+	[BPP, GEA]	Strong	
+ArcA	gadX	+	[AIBSCS, CV(GEA), GEA]	Strong	
+ArcA	lldR	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+ArcA	puuR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+ArcA	xylR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+ArgP	argP	-	[APIORCISFBSCS, CV(GEA), GEA, IC]	Strong	
+ArgP	dnaA	+	[BPP, CV(GEA), GEA, IC]	Confirmed	
+ArgR	argR	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+ArsR	arsR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AscG	prpR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+AsnC	asnC	-	[AIBSCS, CV(GEA), GEA]	Strong	
+BaeR	baeR	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+BasR	csgD	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+BasR	putA	-	[APIORCISFBSCS, BPP]	Strong	
+BasR	qseB	+	[BPP, GEA]	Strong	
+BetI	betI	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+BtsR	csgD	-	[AIBSPD, CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+BtsR	pdhR	-	[AIBSPD, CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+CRP	araC	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	caiF	+	[BCE, CV(GEA), GEA]	Strong	
+CRP	chbR	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	comR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	crp	+	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+CRP	crp	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	csgD	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP	csqR	+	[BPP, GEA, MCIBSPD]	Strong	
+CRP	csqR	-	[BPP, GEA, MCIBSPD]	Strong	
+CRP	cytR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	cytR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	dcuR	+	[APIORCISFBSCS, BPP]	Strong	
+CRP	dgoR	+	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	dpiA	-	[AIBSCS]	Weak	
+CRP	exuR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	feaR	+	[APIORCISFBSCS]	Weak	
+CRP	fis	+	[AIBSCS, BPP, CV(GEA), GEA]	Strong	
+CRP	fis	-	[BPP, GEA]	Strong	
+CRP	flhC	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	flhD	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	fucR	+	[AIBSCS, BPP, CV(GEA), CV(SM), GEA, SM]	Confirmed	
+CRP	fur	+	[APIORCISFBSCS, SM]	Strong	
+CRP	gadE	-	[APIORCISFBSCS, BPP]	Strong	
+CRP	gadX	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	galS	+	[AIBSCS, APIORCISFBSCS, BCE, CV(GEA), GEA]	Strong	
+CRP	glcC	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP	glnG	+	[APIORCISFBSCS]	Weak	
+CRP	glnG	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	glpR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	gutM	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP	hicB	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	hupA	+	[BPP, GEA]	Strong	
+CRP	hupB	+	[BPP, GEA]	Strong	
+CRP	hyfR	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	idnR	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	lacI	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	lsrR	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	malI	+	[AIBSCS, BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	malI	-	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	malT	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	marA	+	[AIBSCS, CV(GEA), GEA, IMP]	Strong	
+CRP	marR	+	[AIBSCS, CV(GEA), GEA, IMP]	Strong	
+CRP	mazE	+	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+CRP	mazF	+	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+CRP	melR	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	mhpR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	mlc	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	mlc	-	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	nagC	+	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+CRP	nagC	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+CRP	ompR	+	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+CRP	ompR	-	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+CRP	oxyR	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	pdhR	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	plaR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CRP	prpR	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	puuR	-	[APIORCISFBSCS, IEP]	Weak	
+CRP	rbsR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP	rhaR	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	rhaS	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	srlR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP	tdcA	+	[APIORCISFBSCS, BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+CRP	uxuR	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	xylR	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CRP	zraR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+CRP-Sxy	sxy	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+CadC	cadC	+	[GEA]	Weak	
+CdaR	cdaR	+	[GEA]	Weak	
+CecR	cecR	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+ChbR	chbR	+	[BPP, GEA]	Strong	
+ChbR	chbR	-	[BPP, GEA]	Strong	
+CpxR	baeR	+	[BPP, CV(GEA), GEA, IC]	Confirmed	
+CpxR	cpxR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CpxR	csgD	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CpxR	marA	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CpxR	marR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Cra	betI	+	[GEA]	Weak	
+Cra	crp	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+Cra	csgD	+	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Cra	glcC	-	[AIBSCS, CV(GEA), GEA]	Strong	
+Cra	marA	-	[AIBSCS, CV(GEA), GEA]	Strong	
+Cra	marR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+Cra	pdeL	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Cra	pdhR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+CsgD	csgD	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CsgD	fliZ	-	[AIBSCS, BPP]	Strong	
+CspA	hns	+	[BPP]	Strong	
+CsqR	csqR	-	[BPP, CV(GEA), CV(GEA/GS), GEA, GS]	Confirmed	
+CusR	cusR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+CynR	cynR	-	[APIORCISFBSCS, BPP]	Strong	
+CysB	cbl	+	[BPP, GEA]	Strong	
+CysB	cysB	-	[APIORCISFBSCS]	Weak	
+CytR	cytR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA, IC]	Confirmed	
+Dan	ttdR	+	[BPP]	Strong	
+DcuR	dpiA	+	[APIORCISFBSCS, BPP]	Strong	
+DgoR	dgoR	-	[AIBSCS, AIBSPD, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+DhaR	dhaR	-	[GEA]	Weak	
+DinJ-YafQ	dinJ	-	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+DinJ-YafQ	yafQ	-	[APIORCISFBSCS, BPP, CV(SM), SM]	Confirmed	
+DnaA	dnaA	+	[BPP, CV(SM), SM]	Confirmed	
+DnaA	dnaA	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+DpiA	appY	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+DpiA	dpiA	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+DsdC	dsdC	-	[GEA]	Weak	
+EvgA	evgA	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+EvgA	gadE	+	[BPP, GEA]	Strong	
+EvgA	ydeO	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+ExuR	exuR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+ExuR	uxuR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	arcA	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+FNR	arcA	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+FNR	cadC	+	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	caiF	+	[BCE, CV(GEA), GEA]	Strong	
+FNR	dcuR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	dpiA	-	[AIBSCS]	Weak	
+FNR	fhlA	+	[BCE, BPP, CV(GEA), GEA]	Confirmed	
+FNR	fnr	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+FNR	gadW	-	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	gadX	-	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	hyfR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+FNR	nac	-	[GEA]	Weak	
+FNR	narL	-	[APIORCISFBSCS, BCE, BPP]	Strong	
+FNR	nfeR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	nikR	+	[APIORCISFBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+FNR	pdhR	+	[AIBSCS, BCE, CV(GEA), GEA]	Strong	
+FNR	pdhR	-	[AIBSCS, BCE, CV(GEA), GEA]	Strong	
+FNR	soxR	-	[GEA]	Weak	
+FNR	soxS	-	[GEA]	Weak	
+FNR	tdcA	+	[AIBSCS, CV(GEA), GEA]	Strong	
+FNR	yeiL	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+FadR	accB	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+FadR	fadR	+	[AIBSCS]	Weak	
+FadR	iclR	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+FhlA	fhlA	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+FhlA	hyfR	+	[GEA]	Weak	
+Fis	crp	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Fis	cspA	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Fis	fis	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Fis	gadX	-	[AIBSCS, CV(GEA), GEA]	Strong	
+Fis	glcC	-	[AIBSCS, CV(GEA), GEA]	Strong	
+Fis	glnG	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Fis	hns	+	[BPP]	Strong	
+Fis	hupA	+	[BPP, GEA]	Strong	
+Fis	hupB	-	[BPP, GEA]	Strong	
+Fis	marA	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+Fis	marR	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+Fis	mazE	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+Fis	mazF	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+Fis	xylR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+FlhDC	fliZ	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+FliZ	csgD	-	[BPP, GEA]	Strong	
+FliZ	flhC	-	[BPP, GEA]	Strong	
+FliZ	flhD	-	[BPP, GEA]	Strong	
+FliZ	gadE	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+FliZ	mlrA	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+FucR	fucR	+	[GEA]	Weak	
+Fur	flhC	-	[AIBSCS]	Weak	
+Fur	flhD	-	[AIBSCS]	Weak	
+Fur	fnr	-	[GEA]	Weak	
+Fur	fur	-	[APIORCISFBSCS, BPP]	Strong	
+Fur	metJ	-	[AIBSCS]	Weak	
+Fur	nac	-	[GEA]	Weak	
+Fur	purR	-	[AIBSCS]	Weak	
+Fur	soxR	-	[GEA]	Weak	
+Fur	soxS	-	[GEA]	Weak	
+GadE	gadE	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GadE	gadW	+	[BPP, GEA]	Strong	
+GadE	gadX	+	[BPP, GEA]	Strong	
+GadE	lrp	+	[GEA]	Weak	
+GadE	rcsA	+	[BPP, GEA]	Strong	
+GadE-RcsB	gadX	+	[APIORCISFBSCS, BPP, CEUMA, CV(GEA), CV(GEA/SM), CV(SM), GEA, IHBCE, RE, SM]	Confirmed	
+GadW	gadE	+	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+GadW	gadW	-	[GEA]	Weak	
+GadW	gadX	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GadW	gadX	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GadX	gadE	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GadX	gadW	+	[GEA]	Weak	
+GadX	gadW	-	[CEUMA, GEA, IHBCE, RE]	Weak	
+GadX	gadX	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GadX	hns	+	[GEA]	Weak	
+GalR	galR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+GalR	galS	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+GalS	galR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+GalS	galS	-	[BCE, CV(GEA), GEA]	Strong	
+GcvA	gcvA	-	[AIBSCS, APIORCISFBSCS, BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, IC, SM]	Confirmed	
+GlcC	glcC	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+GntR	idnR	-	[AIBSCS, APIORCISFBSCS, CV(GEA), GEA]	Strong	
+GutM	gutM	+	[GEA]	Weak	
+GutM	srlR	+	[GEA]	Weak	
+H-NS	adiY	-	[BPP]	Strong	
+H-NS	appY	-	[BPP, GEA]	Strong	
+H-NS	bglJ	-	[BPP]	Strong	
+H-NS	bolA	-	[GEA]	Weak	
+H-NS	cadC	-	[BPP]	Strong	
+H-NS	caiF	-	[GEA]	Weak	
+H-NS	csgD	-	[BPP, GEA]	Strong	
+H-NS	cspA	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+H-NS	evgA	-	[BPP]	Strong	
+H-NS	flhC	+	[BPP, GEA]	Strong	
+H-NS	flhD	+	[BPP, GEA]	Strong	
+H-NS	fliZ	+	[CV(GEA), GEA, IMP]	Strong	
+H-NS	gadE	-	[BPP]	Strong	
+H-NS	gadW	-	[BPP, GEA]	Strong	
+H-NS	gadX	-	[BPP, GEA]	Strong	
+H-NS	gutM	+	[GEA]	Weak	
+H-NS	hdfR	-	[BPP]	Strong	
+H-NS	hns	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+H-NS	leuO	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+H-NS	lrp	-	[BPP, GEA]	Strong	
+H-NS	mazE	+	[GEA]	Weak	
+H-NS	mazF	+	[GEA]	Weak	
+H-NS	nhaR	-	[GEA]	Weak	
+H-NS	rcsA	-	[CV(GEA), GEA, ICWHO]	Strong	
+H-NS	rcsB	-	[BPP]	Strong	
+H-NS	srlR	+	[GEA]	Weak	
+H-NS	stpA	-	[BCE, BPP, CV(GEA), GEA]	Confirmed	
+H-NS	ydeO	-	[BPP]	Strong	
+H-NS	yjjQ	-	[BPP]	Strong	
+HcaR	hcaR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HdfR	flhC	-	[BPP, GEA]	Strong	
+HdfR	flhD	-	[BPP, GEA]	Strong	
+HicB	hicB	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+HigA	higA	-	[BPP, IHBCE]	Strong	
+HigA	higB	-	[BPP, IHBCE]	Strong	
+HigBA	higA	-	[BPP, IHBCE]	Strong	
+HigBA	higB	-	[BPP, IHBCE]	Strong	
+HipAB	hipA	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HipAB	hipB	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HipAB	mazE	-	[BPP, GEA]	Strong	
+HipAB	mazF	-	[BPP, GEA]	Strong	
+HipB	hipA	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HipB	hipB	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HipB	mazE	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HipB	mazF	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+HprR	cusR	+	[APIORCISFBSCS, BPP]	Strong	
+HyfR	hyfR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+IHF	csgD	+	[BPP, GEA]	Strong	
+IHF	fhlA	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+IHF	fis	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+IHF	flhC	-	[APIORCISFBSCS]	Weak	
+IHF	flhD	-	[APIORCISFBSCS]	Weak	
+IHF	fliZ	-	[CV(GEA), CV(GEA/SM), CV(SM), GEA, IHBCE, SM]	Confirmed	
+IHF	fnr	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+IHF	hipA	+	[APIORCISFBSCS]	Weak	
+IHF	hipB	+	[APIORCISFBSCS]	Weak	
+IHF	ihfA	-	[APIORCISFBSCS, BPP]	Strong	
+IHF	ihfB	-	[BPP, GEA]	Strong	
+IHF	ompR	-	[BPP, CV(SM), SM]	Confirmed	
+IHF	plaR	-	[APIORCISFBSCS, BPP]	Strong	
+IHF	tdcA	+	[APIORCISFBSCS, BCE, BPP, CV(SM), SM]	Confirmed	
+IHF	yeiL	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+IclR	iclR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+IdnR	idnR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+IlvY	ilvY	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA, IC]	Confirmed	
+IscR	iscR	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+LeuO	bglJ	+	[BPP]	Strong	
+LeuO	cadC	-	[GEA]	Weak	
+LeuO	leuO	+	[AIBSCS, BPP, CV(GEA), CV(GEA/GS), GEA, GS, IC]	Confirmed	
+LeuO	leuO	-	[AIBSCS, BPP, CV(GEA), CV(GEA/GS), GEA, GS, IC]	Confirmed	
+LeuO	yjjQ	+	[BPP]	Strong	
+LexA	dinJ	-	[AIBSCS, CV(GEA), GEA]	Strong	
+LexA	lexA	-	[APIORCISFBSCS, BPP]	Strong	
+LexA	uvrY	-	[AIBSCS, CV(GEA), GEA]	Strong	
+LexA	yafQ	-	[AIBSCS, CV(GEA), GEA]	Strong	
+LldR	lldR	+	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+LldR	lldR	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+LrhA	flhC	-	[BPP, GEA]	Strong	
+LrhA	flhD	-	[BPP, GEA]	Strong	
+LrhA	leuO	+	[BPP, GEA]	Strong	
+LrhA	lrhA	+	[BPP, GEA]	Strong	
+Lrp	aidB	-	[APIORCISFBSCS, BPP]	Strong	
+Lrp	lrp	-	[AIBSCS, APIORCISFBSCS, BCE, CV(GEA), GEA, SM]	Strong	
+Lrp	malT	+	[GEA]	Weak	
+Lrp	stpA	+	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+Lrp	yeiL	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+LsrR	lsrR	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+LysR	lysR	-	[GEA]	Weak	
+MalI	malI	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MarA	decR	+	[AIBSCS]	Weak	
+MarA	marA	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MarA	marR	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MarA	putA	+	[GEA]	Weak	
+MarA	rob	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MarR	marA	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/GS), CV(GEA/SM), CV(GEA/SM/GS), CV(SM), GEA, GS, SM]	Confirmed	
+MarR	marR	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/GS), CV(GEA/SM), CV(GEA/SM/GS), CV(SM), GEA, GS, SM]	Confirmed	
+MatA	ecpR	+	[BPP]	Strong	
+MatA	flhC	-	[BPP, GEA]	Strong	
+MatA	flhD	-	[BPP, GEA]	Strong	
+MatA	fliZ	-	[BPP]	Strong	
+MazE	mazE	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MazE	mazF	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MazE-MazF	mazE	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MazE-MazF	mazF	-	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MelR	melR	+	[BPP, CV(SM), GEA, SM]	Confirmed	
+MelR	melR	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MetJ	metR	-	[BPP]	Strong	
+MetR	metR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+Mlc	malT	-	[APIORCISFBSCS, BCE, CV(GEA), GEA]	Strong	
+Mlc	mlc	-	[APIORCISFBSCS, BCE, CV(GEA), GEA]	Strong	
+MlrA	cadC	+	[APIORCISFBSCS, BPP]	Strong	
+MlrA	csgD	+	[BPP, GEA]	Strong	
+MngR	mngR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+ModE	narL	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+MprA	mprA	-	[BPP]	Strong	
+MqsA	csgD	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+MqsA	mqsA	-	[APIORCISFBSCS, BPP, CV(GEA), GEA, IHBCE]	Confirmed	
+MraZ	mraZ	-	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+MurR	murR	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+MurR	murR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+Nac	asnC	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+Nac	feaR	+	[IHBCE]	Weak	
+Nac	nac	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+NagC	chbR	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+NagC	creB	-	[AIBSCS]	Weak	
+NagC	nagC	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+NarL	caiF	-	[GEA]	Weak	
+NarL	dcuR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+NarL	dpiA	-	[AIBSCS]	Weak	
+NarL	nikR	-	[GEA]	Weak	
+NemR	nemR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+NfeR	nfeR	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+NhaR	nhaR	+	[BCE, BPP, CV(GEA), GEA]	Confirmed	
+NikR	nikR	-	[BPP]	Strong	
+NimR	nimR	-	[BPP, CV(GEA), CV(GEA/GS), GEA, GS, ICWHO]	Confirmed	
+NorR	norR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+NsrR	dsdC	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NsrR	feaR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NsrR	fhlA	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NsrR	fliZ	-	[APIORCISFBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+NsrR	ihfA	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NsrR	lrp	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NsrR	norR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+NtrC	cbl	+	[GEA]	Weak	
+NtrC	glnG	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+NtrC	glnG	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+NtrC	nac	+	[APIORCISFBSCS]	Weak	
+OmpR	bolA	-	[APIORCISFBSCS, BPP]	Strong	
+OmpR	cadC	-	[BPP, GEA]	Strong	
+OmpR	csgD	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+OmpR	flhC	-	[APIORCISFBSCS]	Weak	
+OmpR	flhD	-	[APIORCISFBSCS]	Weak	
+OxyR	fur	+	[APIORCISFBSCS, BPP, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+OxyR	metR	+	[CEUMA, IHBCE, RE]	Weak	
+OxyR	oxyR	-	[APIORCISFBSCS, BPP, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+PaaX	paaX	-	[APIORCISFBSCS, BPP]	Strong	
+PdeL	pdeL	+	[BPP, CV(GEA), GEA, IHBCE]	Confirmed	
+PdhR	mraZ	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PdhR	pdhR	-	[AIBSCS, APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+PepA	pepA	-	[BPP]	Strong	
+PgrR	tyrR	-	[BPP, CV(GEA), GEA, IGI]	Confirmed	
+PhoB	argP	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+PhoB	cra	-	[GEA]	Weak	
+PhoB	cusR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoB	feaR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoB	gadW	+	[GEA]	Weak	
+PhoB	gadX	+	[GEA]	Weak	
+PhoB	phoB	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoB	prpR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoB	ydfH	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoP	cysB	+	[AIBSCS, APIORCISFBSCS]	Weak	
+PhoP	gadE	+	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+PhoP	gadW	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoP	phoP	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoP	phoP	-	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoP	rstA	+	[AIBSCS, APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+PhoP	treR	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+PhoP	ydeO	-	[APIORCISFBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+PrpR	prpR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+PspF	pspF	-	[BCE, BPP, CV(GEA), GEA]	Confirmed	
+PurR	purR	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+PutA	putA	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+PuuR	puuR	-	[BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, IC, SM]	Confirmed	
+QseB	feaR	+	[AIBSCS, CV(GEA), GEA]	Strong	
+QseB	feaR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+QseB	flhC	+	[GEA]	Weak	
+QseB	flhD	+	[GEA]	Weak	
+QseB	qseB	+	[BPP, GEA]	Strong	
+RbsR	rbsR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+RcdA	csgD	+	[BPP, CV(GEA), GEA, IC]	Confirmed	
+RcnR	rcnR	-	[BPP, GEA]	Strong	
+RcsAB	csgD	-	[GEA]	Weak	
+RcsAB	flhC	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+RcsAB	flhD	-	[BPP, CV(SM), GEA, SM]	Confirmed	
+RcsAB	rcsA	+	[AIBSCS, BCE, BPP, CV(GEA), CV(SM), GEA, SM]	Confirmed	
+RcsB	gadX	-	[BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, IHBCE, SM]	Confirmed	
+RcsB	ydeO	+	[GEA]	Weak	
+RcsB-BglJ	leuO	+	[APIORCISFBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+RelB	relB	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+RelB	relE	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+RelB-RelE	relB	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+RelB-RelE	relE	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+RhaR	rhaR	+	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+RhaR	rhaS	+	[APIORCISFBSCS, BCE, BPP, CV(GEA), GEA]	Confirmed	
+RhaS	rhaR	+	[BPP, GEA]	Strong	
+RhaS	rhaR	?	[APIORCISFBSCS, BPP]	Strong	
+RhaS	rhaS	+	[BPP, GEA]	Strong	
+RhaS	rhaS	?	[APIORCISFBSCS, BPP]	Strong	
+Rob	marA	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Rob	marR	+	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+Rob	rob	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+RstA	csgD	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+RutR	gadW	-	[BPP, GEA]	Strong	
+RutR	gadX	-	[BPP, GEA]	Strong	
+RutR	nemR	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+RutR	rutR	-	[AIBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+SdiA	gadW	+	[GEA]	Weak	
+SgrR	sgrR	-	[APIORCISFBSCS, BPP, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+SlyA	leuO	+	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+SoxR	soxR	-	[BPP, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+SoxR	soxS	+	[BPP, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+SoxS	decR	+	[CEUMA, IHBCE, RE]	Weak	
+SoxS	fur	+	[APIORCISFBSCS, BPP, CE, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+SoxS	marA	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+SoxS	marR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+SoxS	rob	-	[APIORCISFBSCS, BPP]	Strong	
+SoxS	soxS	-	[BPP, CEUMA, CV(GEA), GEA, IHBCE, RE]	Confirmed	
+SrlR	gutM	-	[GEA]	Weak	
+SrlR	srlR	-	[GEA]	Weak	
+StpA	leuO	-	[GEA]	Weak	
+StpA	stpA	-	[GEA]	Weak	
+SutR	fliZ	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+SutR	sutR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+SutR	sutR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+TdcA	tdcA	+	[BCE, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+TdcR	tdcA	+	[BCE, SM]	Strong	
+TorR	gadX	-	[AIBSCS, CV(GEA), GEA]	Strong	
+TorR	torR	-	[APIORCISFBSCS, BCE, BPP, CV(GEA), CV(GEA/GS), CV(GEA/SM), CV(GEA/SM/GS), CV(SM), GEA, GS, SM]	Confirmed	
+TrpR	trpR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+TyrR	tyrR	-	[APIORCISFBSCS, CV(GEA), GEA]	Strong	
+UidR	uidR	-	[GEA]	Weak	
+UxuR	exuR	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+UxuR	uxuR	-	[AIBSCS, CV(GEA), GEA]	Strong	
+XylR	araC	-	[AIBSCS, BPP, CV(GEA), GEA]	Confirmed	
+XylR	xylR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+YdeO	gadE	+	[BPP, CV(GEA), GEA, IHBCE]	Confirmed	
+YdeO	gadW	+	[BPP, CV(GEA), GEA, IHBCE]	Confirmed	
+YdeO	ydeO	-	[GEA]	Weak	
+YefM	yefM	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+YefM	yoeB	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+YefM-YoeB	yefM	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+YefM-YoeB	yoeB	-	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
+YeiL	yeiL	+	[GEA]	Weak	
+YiaJ	plaR	-	[BCE, CV(GEA), GEA]	Strong	
+YjjQ	flhC	-	[AIBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+YjjQ	flhD	-	[AIBSCS, CV(GEA), CV(GEA/SM), CV(SM), GEA, SM]	Confirmed	
+ZraR	zraR	+	[APIORCISFBSCS, BPP, CV(GEA), GEA]	Confirmed	
