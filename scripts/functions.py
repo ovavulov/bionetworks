@@ -4,6 +4,9 @@ Auxiliary functions
 
 """
 
+import warnings
+warnings.filterwarnings("ignore")
+
 import os
 import json
 import joblib
@@ -16,8 +19,13 @@ import networkx as nx
 import multiprocessing as mp
 from math import factorial
 
-import warnings
-warnings.filterwarnings("ignore")
+import networkx as nx
+from networkx.algorithms.distance_measures import diameter
+from networkx.algorithms.components import is_weakly_connected, is_strongly_connected, strongly_connected_components
+from networkx.algorithms.centrality import degree_centrality, betweenness_centrality
+from networkx.convert_matrix import to_numpy_array
+from networkx.algorithms.swap import double_edge_swap
+from collections import namedtuple
 
 
 def read_ecoli_network(path):
@@ -56,7 +64,7 @@ def update_cfg(path, param, value, verbose=True):
     return cfg
 
 
-def get_interacion_matrix(cfg):
+def get_interaction_matrix(cfg):
     
     cwd = os.getcwd()    
     network = cfg["NETWORK_TO_SEARCH_IN"]
@@ -246,3 +254,60 @@ def motif_search(cfg, interaction_matrix, batch_size, verbose=False):
 def count_triads_nx(interaction_matrix):    
     G = nx.DiGraph(interaction_matrix.T)
     return nx.algorithms.triads.triadic_census(G)
+
+
+def get_metrics_report(interaction_matrix):
+    Report = namedtuple(
+        "report",
+        ["degree_seq", "avg_degree", "diameter_strong", "diameter_weak",
+         "largest_component_frac", "degree_centrality", "betweenness_centrality"]
+    )
+    G = nx.DiGraph(interaction_matrix.T)
+    degree_seq = pd.Series(np.array([x[1] for x in G.degree]))
+    avg_degree = degree_seq.mean()
+    diameter_weak = diameter(G.to_undirected()) if is_weakly_connected(G) else np.inf
+    if is_strongly_connected(G):
+        diameter_strong = diameter(G)
+        largest_component_frac = 1
+    else:
+        diameter_strong = np.inf
+        strong_components = [(c, len(c)) for c in strongly_connected_components(G)]
+        strong_components = sorted(strong_components, key=lambda x: x[1], reverse=True)
+        largest_component_frac = strong_components[0][1]/interaction_matrix.shape[0]
+    dc = pd.Series(degree_centrality(G))
+    bc = pd.Series(betweenness_centrality(G))
+    report = Report(*[degree_seq, avg_degree, diameter_strong, diameter_weak, largest_component_frac, dc, bc])
+    return report
+
+
+def get_loops(matrix):
+    m = matrix + matrix.T
+    x = sorted([sorted([x, y]) for x, y in zip(*np.where(m == 2))])
+    y = [x[k] for k in range(len(x)) if k % 2 == 0]
+    return y
+
+
+def get_shuffled_matrix(interaction_matrix, min_swaps):
+    G = nx.Graph(interaction_matrix)
+    swaps = 0
+    for _ in range(min_swaps):
+        G = double_edge_swap(G, nswap=1, max_tries=1000)
+    shuffled_matrix = to_numpy_array(G).astype(int)
+    orig_loops = get_loops(interaction_matrix)
+    shuffled_loops = get_loops(shuffled_matrix)
+    a = []; b = []
+    for i, j in shuffled_loops:
+        if [i, j] in orig_loops:
+            continue
+        if np.random.binomial(1, 0.5):
+            a.append(i); b.append(j)
+        else:
+            a.append(j); b.append(i)
+    a = np.array(a); b = np.array(b)
+    shuffled_matrix[a, b] = 0
+    return shuffled_matrix
+
+
+def corruption_score(shuffled_matrix, interaction_matrix):
+    i, j = np.where(interaction_matrix == 1)
+    return shuffled_matrix[i, j].sum()/interaction_matrix[i, j].sum()
