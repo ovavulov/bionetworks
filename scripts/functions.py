@@ -353,3 +353,70 @@ def plot_distr(counters_shuffled, counter_orig, label, highlight):
         b.set_xlabel("",fontsize=0)
         b.set_ylabel("",fontsize=0);
     return df, fig
+
+
+def get_shuffled_mp(params):
+    matrix = params["matrix"]
+    nswaps = params["nswaps"]
+    return get_shuffled_matrix(matrix, nswaps)
+
+def generate_random_networks(cfg, interaction_matrix, nsims, nsteps, nswaps):
+    counters = []
+    for _ in range(nsteps):
+        pool = mp.Pool(mp.cpu_count())
+        params = {"matrix": interaction_matrix, "nswaps": nswaps}
+        shuffled_arrays = pool.map(get_shuffled_mp, (params for _ in range(int(nsims/nsteps))))
+        pool.close()
+        pool.join()
+        for arr in tqdm(shuffled_arrays):
+            motifs, counter = motif_search(cfg, arr, batch_size=10000)
+            counters.append(counter)
+    return counters
+
+
+def plot_distr_2(counters, counter_orig, ticks):
+    distr = {triad: [] for triad in counters[0].keys()}
+    for counter in counters:
+        for triad, n in counter.items():
+            distr[triad].append(n)
+    distr = {x: np.array(y) for x, y in distr.items()}
+    fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(20, 10))
+    for i, motif in enumerate(counters[0].keys()):
+        ax = axes[i//3, i%3]
+        ax.set_title(motif, fontsize=25)
+        pd.Series(distr[motif]).hist(bins=50, ax=ax)
+        ax.plot([counter_orig[motif]]*100, np.linspace(0, ticks[i], 100), "r")
+        
+        
+def build_zscores_report(counters, counter_orig):
+    distr = {triad: [] for triad in counters[0].keys()}
+    for counter in counters:
+        for triad, n in counter.items():
+            distr[triad].append(n)
+    distr = {x: np.array(y) for x, y in distr.items()}
+    zscores_report = pd.DataFrame(
+        index=["N_real", "mean(N_rand)", "sd(N_rand)", "Z-score", "P-value", "Result"]
+    )
+    for motif in counters[0].keys():
+        n_hypothesis = len(counters[0].keys())
+        d = distr[motif]
+        zscore = (counter_orig[motif]-np.mean(distr[motif]))/np.std(distr[motif])
+        pvalue = len(d[d <= counter_orig[motif]])/len(d)
+        if pvalue > 0.5:
+            pvalue = len(d[d >= counter_orig[motif]])/len(d)
+        if pvalue < 0.01/n_hypothesis:
+            result = " < 0.01"
+        elif pvalue < 0.05/n_hypothesis:
+            result = " < 0.05"
+        else:
+            result = "non-significant"
+        result_list = [
+            counter_orig[motif],
+            np.mean(distr[motif]),
+            np.std(distr[motif]),
+            zscore,
+            pvalue,
+            result
+        ]
+        zscores_report[motif] = result_list
+    return zscores_report.T
