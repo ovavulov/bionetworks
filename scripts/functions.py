@@ -18,6 +18,9 @@ from tqdm import tqdm
 import networkx as nx
 import multiprocessing as mp
 from math import factorial
+from copy import copy
+from matplotlib import pyplot as plt
+import seaborn as sns
 
 import networkx as nx
 from networkx.algorithms.distance_measures import diameter
@@ -144,7 +147,7 @@ def get_motifs(interaction_matrix, combs, codes, n):
     return triads
 
 
-def motif_search(cfg, interaction_matrix, batch_size, verbose=False):
+def motif_search(cfg, interaction_matrix, batch_size, dump=False, verbose=False):
     
     network_name = cfg["NETWORK_TO_SEARCH_IN"]
     codes, mapping = get_triad_codes()
@@ -245,8 +248,9 @@ def motif_search(cfg, interaction_matrix, batch_size, verbose=False):
     motifs = {mapping[i]: list(set(motifs[i])) for i in range(len(mapping))}
     counter = {x: len(y) for x, y in motifs.items()}
     
-    joblib.dump(motifs, f"./networks/{network_name}/motifs.gz")
-    json.dump(counter, open(f"./networks/{network_name}/counter.json", "w"))
+    if dump:
+        joblib.dump(motifs, f"./networks/{network_name}/motifs.gz")
+        json.dump(counter, open(f"./networks/{network_name}/counter.json", "w"))
     
     return motifs, counter
 
@@ -287,27 +291,65 @@ def get_loops(matrix):
     return y
 
 
-def get_shuffled_matrix(interaction_matrix, min_swaps):
-    G = nx.Graph(interaction_matrix)
-    swaps = 0
-    for _ in range(min_swaps):
-        G = double_edge_swap(G, nswap=1, max_tries=1000)
-    shuffled_matrix = to_numpy_array(G).astype(int)
-    orig_loops = get_loops(interaction_matrix)
-    shuffled_loops = get_loops(shuffled_matrix)
-    a = []; b = []
-    for i, j in shuffled_loops:
-        if [i, j] in orig_loops:
-            continue
-        if np.random.binomial(1, 0.5):
-            a.append(i); b.append(j)
+@njit
+def get_shuffled_matrix(interaction_matrix, nswaps):
+    shuffled = interaction_matrix.copy()
+    tf_nodes = np.where(shuffled.sum(axis=0) != 0)[0]
+    for i in range(nswaps):
+        tf_1, tf_2 = np.random.choice(tf_nodes, size=2, replace=True)
+        tg = shuffled[:, np.array([tf_1, tf_2])]
+        x = np.where((tg[:, 0] == 1) & (tg[:, 1] == 0))[0]
+        if x.shape[0] > 0:
+            tg_1 = np.random.choice(x)
         else:
-            a.append(j); b.append(i)
-    a = np.array(a); b = np.array(b)
-    shuffled_matrix[a, b] = 0
-    return shuffled_matrix
+            continue
+        y = np.where((tg[:, 1] == 1) & (tg[:, 0] == 0))[0]
+        if y.shape[0] > 0:
+            tg_2 = np.random.choice(y)
+        else:
+            continue
+        s = shuffled[np.array([tg_1, tg_2]), :][:, np.array([tf_1, tf_2])]
+        e1 = np.diag(np.array([1, 1]))
+        e2 = e1[::-1]
+        if (s == e1).all():
+            shuffled[tg_1, tf_1] = 0
+            shuffled[tg_1, tf_2] = 1
+            shuffled[tg_2, tf_1] = 1
+            shuffled[tg_2, tf_2] = 0
+        else:
+            shuffled[tg_1, tf_1] = 1
+            shuffled[tg_1, tf_2] = 0
+            shuffled[tg_2, tf_1] = 0
+            shuffled[tg_2, tf_2] = 1
+    return shuffled  
 
 
 def corruption_score(shuffled_matrix, interaction_matrix):
     i, j = np.where(interaction_matrix == 1)
     return shuffled_matrix[i, j].sum()/interaction_matrix[i, j].sum()
+
+
+def plot_distr(counters_shuffled, counter_orig, label, highlight):
+    df = pd.DataFrame(columns=["motif", "abundance", "network"])
+    df.motif = counter_orig.keys(); df.abundance = counter_orig.values(); df.network = "original"
+    for counter_shuffled in tqdm(counters_shuffled):
+        df2 = pd.DataFrame(columns=["motif", "abundance", "network"])
+        df2.motif = counter_shuffled.keys(); df2.abundance = counter_shuffled.values(); df2.network = "shuffled"
+        df = pd.concat([df, df2], axis=0)
+    df.abundance = df.abundance/1000
+    fig, ax = plt.subplots(nrows=1, ncols=5, figsize=(20, 5))
+    fig.suptitle(label, fontsize=30)
+    for i in range(len(counter_orig.keys())):
+        motif = list(counter_orig.keys())[i]
+        b = sns.barplot(data=df[df["motif"]==motif], x="motif", y="abundance", hue="network", ax=ax[i], 
+                        palette="Blues_r")
+        if highlight and motif == highlight:
+            b.set_facecolor('xkcd:wheat')
+        b.legend_.remove()
+#         else:
+#             plt.setp(b.get_legend().get_texts(), fontsize='13')
+#             plt.setp(b.get_legend().get_title(), fontsize='13')
+        b.tick_params("x", labelsize=20)
+        b.set_xlabel("",fontsize=0)
+        b.set_ylabel("",fontsize=0);
+    return df, fig
