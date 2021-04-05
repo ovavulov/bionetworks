@@ -3,8 +3,10 @@ Materials for semester project in Bioinformatics Institute (spring 2021)
 
 __1_network_construction.ipynb__ - script converting raw data about network to binary matrix. Resulting matricies are stored in __networks__ folder in .gz format
 
-__2_motif_search.ipynb__ - launching motif search pipeline on diffent networks
+__2.1_motif_search_algo.ipynb__ - launching motif search pipeline on diffent networks
 
-__3_motif_enrichment.ipynb__ - intermediate results; test random matrix was generated and compared with original one among the range of topological measures and motifs distributions
+__2.2_motif_search_vis.ipynb__ - visualization of search results
 
-__\_visualization.ipynb__ - result visualization.
+__3.1_enrichment_prep.ipynb__ - test shuffling, QA and optimal swaps number estimation
+
+__3.1_enrichment_analysis.ipynb__ - main results for enrichment analysis: plots, p-values and Z-scores
