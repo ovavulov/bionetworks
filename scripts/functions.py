@@ -420,3 +420,16 @@ def build_zscores_report(counters, counter_orig):
         ]
         zscores_report[motif] = result_list
     return zscores_report.T
+
+split_motif = lambda x: list(map(int, x.split("_")))
+
+def build_vmn(motifs, verbose=False):
+    motifs_network = np.zeros((len(motifs), len(motifs)))
+    iterator = combinations(range(len(motifs)), 2)
+    if verbose:
+        iterator = tqdm(iterator, total=int(len(motifs)*(len(motifs)-1)/2))
+    for i, j in iterator:
+        m1, m2 = map(lambda x: set(map(int, x.split("_"))), [motifs[i], motifs[j]])
+        motifs_network[i, j] = len(m1 & m2)
+        motifs_network[j, i] = motifs_network[i, j]
+    return motifs_network
