@@ -30,6 +30,8 @@ from networkx.convert_matrix import to_numpy_array
 from networkx.algorithms.swap import double_edge_swap
 from collections import namedtuple
 
+n_combs = lambda n, k: int(factorial(n)/factorial(n-k)/factorial(k))
+
 
 def read_ecoli_network(path):
     f = open(path)
@@ -421,7 +423,9 @@ def build_zscores_report(counters, counter_orig):
         zscores_report[motif] = result_list
     return zscores_report.T
 
+
 split_motif = lambda x: list(map(int, x.split("_")))
+
 
 def build_vmn(motifs, verbose=False):
     motifs_network = np.zeros((len(motifs), len(motifs)))
@@ -433,3 +437,11 @@ def build_vmn(motifs, verbose=False):
         motifs_network[i, j] = len(m1 & m2)
         motifs_network[j, i] = motifs_network[i, j]
     return motifs_network
+
+
+def get_sparcity(matrix):
+    return matrix.sum()/matrix.shape[0]
+
+
+def get_tf_content(matrix):
+    return len(np.where(matrix.sum(axis=0)!=0)[0])/matrix.shape[0]
