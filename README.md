@@ -11,7 +11,5 @@ __3.1_enrichment_prep.ipynb__ - test shuffling, QA and optimal swaps number esti
 
 __3.2_enrichment_analysis.ipynb__ - main results for enrichment analysis: plots, p-values and Z-scores
 
-__4.1_structure_analysis.ipynb__ - investigation of real netwotks structure
-
-__4.2_generation.ipynb__ - network generation algorithm
+__4_generation.ipynb__ - network generation algorithm
 
