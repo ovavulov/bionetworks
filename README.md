@@ -23,6 +23,8 @@ __2.2_motif_search_vis.ipynb__ - visualization of search results
 __3.1_enrichment_prep.ipynb__ - test shuffling, QA and optimal swaps number estimation
 
 __3.2_enrichment_analysis.ipynb__ - main results for enrichment analysis: plots, p-values and Z-scores
+![](pics/enrichment.png)
 
 __4_generation.ipynb__ - network generation algorithm
+![](pics/algorithm.png)
 
