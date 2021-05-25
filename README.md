@@ -13,6 +13,12 @@ Random but plausible (in sense of local structure) artificial gene regulatory ne
 2. Implement generation algorithm
 
 ### Content
+
+./scripts/functions.py - the main code source, diverse library of custom function to work with GRNs
+./requirents.txt - prerequisites & dependencies: __pip install -r requirements.txt__
+
+Project check-points in jupyter-notebooks:
+
 __1_network_construction.ipynb__ - script converting raw data about network to binary matrix. Resulting matricies are stored in __networks__ folder in .gz format
 
 __2.1_motif_search_algo.ipynb__ - launching motif search pipeline on diffent networks
