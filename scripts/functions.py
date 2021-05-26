@@ -1,6 +1,6 @@
 """
 
-Auxiliary functions
+Main library of custom functions for network analysis
 
 """
 
@@ -30,24 +30,19 @@ from networkx.convert_matrix import to_numpy_array
 from networkx.algorithms.swap import double_edge_swap
 from collections import namedtuple
 
+# combination number combinatorial formula
 n_combs = lambda n, k: int(factorial(n)/factorial(n-k)/factorial(k))
 
 
-def read_ecoli_network(path):
-    f = open(path)
-    line = f.readline()
-    while line.startswith('#'):
-        line = f.readline()
-    df = pd.read_csv(f, sep="\t", header=None)
-    df.loc[-1] = line.split("\t")
-    df.index = df.index + 1
-    df = df.sort_index()
-    f.close()
-    return df
-
-
 def get_actual_parametrization(source, check_input=True, verbose=True):
-        
+    """
+    Check the common config file and output study parameters
+    Attributes:
+    source, str - path to config
+    check_input, bool - validate config params if True
+    verbose - output logs if True
+    Return: config, dict
+    """ 
     cfg = source if type(source) is dict else json.load(open(source, "r"))
     
     if check_input:
@@ -60,7 +55,15 @@ def get_actual_parametrization(source, check_input=True, verbose=True):
     return cfg
 
 def update_cfg(path, param, value, verbose=True):
-    
+    """
+    Update params in config
+    Attributes:
+    path, str - path to config
+    param, str - parameter to update
+    value - new value for parameter
+    verbose, bool - output logs if True
+    Return: updated config
+    """ 
     cfg = get_actual_parametrization(path, check_input=False, verbose=False)
     cfg[param] = value
     cfg = get_actual_parametrization(cfg, verbose=verbose)
@@ -81,10 +84,22 @@ def get_interaction_matrix(cfg):
 
 
 def build_motif_from_string(string):
+    """
+    Create numpy array from flattened string representation
+    Attributes:
+    string, str - string of 1/0 separated by spaces
+    Return: 3x3 numpy array
+    """ 
     return np.array(list(map(int, string.split()))).reshape(3, 3)
 
 
 def get_equivalents(core_pattern):
+    """
+    Generate all equivalent forms for motif interaction matrix
+    Attributes:
+    core_pattern, numpy  - string of 1/0 separated by spaces
+    Return: list of equivalent motif matricies
+    """
     pattern_variants = []
     for permutation in permutations(range(3)):
         variant = core_pattern[permutation, :]
@@ -98,6 +113,11 @@ def get_equivalents(core_pattern):
 
 
 def print_equivalents(cfg):
+    """
+    Print all equivalent forms for motif interaction matrix
+    Attributes:
+    cfg, dict - string of 1/0 separated by spaces
+    """
     m = build_motif_from_string(json.load(open("./motifs_collection.json", "r"))[cfg["MOTIF_TO_SEARCH_FOR"]])
     if cfg["SELFLOOPS_INCLUDED"]: m += np.diag([1]*3)
     equivalents = get_equivalents(m)
@@ -109,6 +129,10 @@ def print_equivalents(cfg):
 
         
 def get_triad_codes():
+    """
+    Encode all possible triads using bitmask
+    Return: resulting codes
+    """
     motifs = json.load(open("./motifs_collection.json", "r"))
     salt = np.array([2**i for i in range(6)])
     mapping = {x: i for i, x in enumerate(motifs.keys())}
@@ -129,6 +153,10 @@ def get_triad_codes():
 
 @njit(cache=True)
 def get_motifs(interaction_matrix, combs, codes, n):
+    """
+    Count and save all triads by the given interaction matrix
+    Return: resulting triads
+    """
     triads = [[(-1, -1, -1)] for _ in range(n)]
     salt = np.array([2**i for i in range(6)]).astype(np.float64)
     n_combinations = len(combs)
@@ -150,7 +178,16 @@ def get_motifs(interaction_matrix, combs, codes, n):
 
 
 def motif_search(cfg, interaction_matrix, batch_size, dump=False, verbose=False):
-    
+    """
+    The main function for motif search in the given interaction matrix
+    Attributes:
+    cfg, dict - config file dictionary
+    interaction_matrix, numpy array - adjecency matrix of analysed netwotk
+    batch_size, int - number of triads analyzed in the one step of parallelized algorithm
+    dump, bool - save motifs if True
+    verbose, bool - output logs if True
+    Return: resulting motifs, their indecies and matricies, dict
+    """
     network_name = cfg["NETWORK_TO_SEARCH_IN"]
     codes, mapping = get_triad_codes()
     N_CORES = mp.cpu_count() if cfg["N_CORES_TO_USE"] == -1 else cfg["N_CORES_TO_USE"]
@@ -257,12 +294,22 @@ def motif_search(cfg, interaction_matrix, batch_size, dump=False, verbose=False)
     return motifs, counter
 
 
-def count_triads_nx(interaction_matrix):    
+def count_triads_nx(interaction_matrix):
+    """
+    Triads counting using NetworkX module
+    """
     G = nx.DiGraph(interaction_matrix.T)
     return nx.algorithms.triads.triadic_census(G)
 
 
 def get_metrics_report(interaction_matrix):
+    """
+    Buid topological metrics report
+    Attributes:
+    interaction_matrix, numpy array - adjecency matrix of analysed netwotk
+    Return: results as named tuple class: degree sequence, average degree, diameter, fraction of the largest connected conponent,
+    degree and betweenness centrality
+    """
     Report = namedtuple(
         "report",
         ["degree_seq", "avg_degree", "diameter_strong", "diameter_weak",
@@ -295,6 +342,13 @@ def get_loops(matrix):
 
 @njit
 def get_shuffled_matrix(interaction_matrix, nswaps):
+    """
+    Shuffle incoming matrix preserving in/out degree for each vertex
+    Attributes:
+    interaction_matrix, numpy array - adjecency matrix of analysed netwotk
+    nswaps, int - number of swaps in shuffling process
+    Return: shuffled matrix, numpy array
+    """
     shuffled = interaction_matrix.copy()
     tf_nodes = np.where(shuffled.sum(axis=0) != 0)[0]
     for i in range(nswaps):
@@ -327,11 +381,21 @@ def get_shuffled_matrix(interaction_matrix, nswaps):
 
 
 def corruption_score(shuffled_matrix, interaction_matrix):
+    """
+    Compute fraction of shifted links in shuffled matrix comparing with original one
+    Attributes:
+    shuffled_matrix, numpy array - adjecency matrix of shuffled netwotk
+    interaction_matrix, numpy array - adjecency matrix of original netwotk
+    Return: corruption score, float
+    """
     i, j = np.where(interaction_matrix == 1)
     return shuffled_matrix[i, j].sum()/interaction_matrix[i, j].sum()
 
 
 def plot_distr(counters_shuffled, counter_orig, label, highlight):
+    """
+    Plot motif number distribution (original versus shuffled)
+    """
     df = pd.DataFrame(columns=["motif", "abundance", "network"])
     df.motif = counter_orig.keys(); df.abundance = counter_orig.values(); df.network = "original"
     for counter_shuffled in tqdm(counters_shuffled):
@@ -358,11 +422,21 @@ def plot_distr(counters_shuffled, counter_orig, label, highlight):
 
 
 def get_shuffled_mp(params):
+    """Auxiliary parallel functioin"""
     matrix = params["matrix"]
     nswaps = params["nswaps"]
     return get_shuffled_matrix(matrix, nswaps)
 
 def generate_random_networks(cfg, interaction_matrix, nsims, nsteps, nswaps):
+    """
+    Make the number of shuffled matricies and count motifs in them
+    Attributes:
+    interaction_matrix, numpy array - adjecency matrix of original netwotk
+    nsims, int - number of shuffled matrix to generate
+    nsteps, int - number of steps
+    nswaps, int - number of swaps in every shuffling process
+    Return: list of counted motifs for every generated shuffled matrix
+    """
     counters = []
     for _ in range(nsteps):
         pool = mp.Pool(mp.cpu_count())
@@ -377,6 +451,9 @@ def generate_random_networks(cfg, interaction_matrix, nsims, nsteps, nswaps):
 
 
 def plot_distr_2(counters, counter_orig, ticks):
+    """
+    Plot distributioins
+    """
     distr = {triad: [] for triad in counters[0].keys()}
     for counter in counters:
         for triad, n in counter.items():
@@ -391,6 +468,13 @@ def plot_distr_2(counters, counter_orig, ticks):
         
         
 def build_zscores_report(counters, counter_orig):
+    """
+    Compute z-scores for every motif based on the set of shuffled matricies
+    Attributes:
+    counters, list - list of counter dicitionaries for every shuffled matrix
+    counter_orig, dict - counted motifs for original network
+    Return: report with z-score and p-value for every motif type
+    """
     distr = {triad: [] for triad in counters[0].keys()}
     for counter in counters:
         for triad, n in counter.items():
@@ -428,6 +512,12 @@ split_motif = lambda x: list(map(int, x.split("_")))
 
 
 def build_vmn(motifs, verbose=False):
+    """
+    Build vertex-based motif network (by shared nodes)
+    Attributes:
+    motifs, list - triads of motifs as string of indecies sepated by "_"
+    Return: adjecenct matrix for VMN
+    """
     motifs_network = np.zeros((len(motifs), len(motifs)))
     iterator = combinations(range(len(motifs)), 2)
     if verbose:
@@ -440,8 +530,10 @@ def build_vmn(motifs, verbose=False):
 
 
 def get_sparcity(matrix):
+    """Compute netwotk sparcity by adjacency matrix"""
     return matrix.sum()/matrix.shape[0]
 
 
 def get_tf_content(matrix):
+    """Compute netwotk TF/TG content by adjacency matrix"""
     return len(np.where(matrix.sum(axis=0)!=0)[0])/matrix.shape[0]
