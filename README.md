@@ -14,7 +14,7 @@ Random but plausible (in sense of local structure) artificial gene regulatory ne
 
 ### Content
 
-__./scripts/functions.py__ - the main code source, diverse library of custom functions to work with GRNs
+__./scripts/functions.py__ - the main code source __with comments__, diverse library of custom functions to work with GRNs
 
 __./requirents.txt__ - prerequisites & dependencies: __pip install -r requirements.txt__
 
