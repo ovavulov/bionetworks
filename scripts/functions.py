@@ -445,3 +445,14 @@ def get_sparcity(matrix):
 
 def get_tf_content(matrix):
     return len(np.where(matrix.sum(axis=0)!=0)[0])/matrix.shape[0]
+
+def plot_motif_distr(counter):
+    a = pd.Series(counter)
+    a = a/sum(a)
+    plt.title("Motifs distribution", fontsize=15)
+    plt.ylim(0, 1)
+    plt.bar(a.index, a.values)
+    for key in a.keys():
+        plt.text(x=key, y=a[key]+0.05,
+                 s=f"{a[key]:.3f}", fontsize=10)
+#     plt.savefig("./pics/motif_distr_art2.png")
